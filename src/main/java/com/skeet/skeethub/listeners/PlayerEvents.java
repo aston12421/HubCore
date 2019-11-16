@@ -19,6 +19,7 @@ import org.bukkit.event.player.PlayerPickupItemEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
 
 import com.skeet.skeethub.Main;
+import com.skeet.skeethub.hub.utils;
 
 public class PlayerEvents implements Listener
 {
@@ -55,8 +56,7 @@ public class PlayerEvents implements Listener
     Player player = event.getPlayer();
     if (!player.hasPermission("skeet.staff")) {
       event.setCancelled(true);
-      String prefix = plugin.getConfig().getString("prefix");
-      player.sendMessage(ChatColor.translateAlternateColorCodes('&', (prefix + " &7You cannot chat in this area!")));
+      player.sendMessage(ChatColor.translateAlternateColorCodes('&', (utils.scoreboardtitle + " &7You cannot chat in this area!")));
     }
     else if (player.hasPermission("skeet.staff")) {
       event.setCancelled(false);
