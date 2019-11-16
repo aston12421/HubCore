@@ -3,4 +3,6 @@ skeet:
   noperm: '&cNo Permission!'
 
 scoreboard:
-  title: '&3&lHydro Network'
+  title: '&3&lHydro'
+  ip: 'test.com'
+    color: '&b'

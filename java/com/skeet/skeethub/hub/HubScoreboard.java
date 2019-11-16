@@ -48,7 +48,7 @@ public class HubScoreboard implements Listener {
 		Chat chat = Main.getInstance().getChat();
 		Scoreboard board = Bukkit.getScoreboardManager().getNewScoreboard();
 		Objective o = board.registerNewObjective("Skeet Network", "dummy");
-		o.setDisplayName(ChatColor.translateAlternateColorCodes('&', (plugin.getConfig().getString("scoreboard.title"))));
+		o.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&3&lHydro Network"));
 		o.setDisplaySlot(DisplaySlot.SIDEBAR);
 		Team test = board.registerNewTeam("test");
 		test.setPrefix(ChatColor.translateAlternateColorCodes('&', "&7&m--------"));
@@ -58,8 +58,8 @@ public class HubScoreboard implements Listener {
 		test1.setPrefix(ChatColor.translateAlternateColorCodes('&', "&7&m--------"));
 		test1.setSuffix("----------------");
 		Team serverip = board.registerNewTeam("serverip");
-		serverip.setPrefix(ChatColor.translateAlternateColorCodes('&', "&7"));
-		serverip.setSuffix("play.skeetmc.net");
+		serverip.setPrefix(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("scoreboard.ip.color")));
+		serverip.setSuffix(plugin.getConfig().getString("scoreboard.ip"));
 		Score spacer = o.getScore(ChatColor.translateAlternateColorCodes('&', "&r&7&m"));
 		Score spacer3 = o.getScore(ChatColor.translateAlternateColorCodes('&', "&7&m"));
 		Score rankt = o.getScore(ChatColor.translateAlternateColorCodes('&', "&aRank"));
