@@ -16,8 +16,8 @@ import com.skeet.skeethub.Main;
 import net.md_5.bungee.api.ChatColor;
 import net.milkbowl.vault.chat.Chat;
 
-public class armour implements Listener {
-	public armour() {
+public class Armour implements Listener {
+	public Armour() {
 	}
 
 	@EventHandler

@@ -12,13 +12,13 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import com.skeet.skeethub.hub.utils;
+import com.skeet.skeethub.hub.Utils;
 
 import net.md_5.bungee.api.ChatColor;
 
-public class vanishtoolListener implements org.bukkit.event.Listener {
+public class VanishtoolListener implements org.bukkit.event.Listener {
 
-	public vanishtoolListener(String message) {
+	public VanishtoolListener(String message) {
 	}
 
 	public void Send(Player player) {
@@ -93,14 +93,14 @@ public class vanishtoolListener implements org.bukkit.event.Listener {
 				lore1.add(ChatColor.DARK_GRAY + "(Toggles player visibility)");
 				hiddenMeta.setLore(lore1);
 				hidden.setItemMeta(hiddenMeta);
-				vanishtoolListener ab = new vanishtoolListener(ChatColor.DARK_GRAY + "�" + ChatColor.GRAY
+				VanishtoolListener ab = new VanishtoolListener(ChatColor.DARK_GRAY + "�" + ChatColor.GRAY
 						+ "Toggled player visibility" + ChatColor.DARK_GRAY + "�");
 				ab.Send(player);
 				hiding.remove(player);
 				player.getInventory().setItem(8, hidden);
 				for (Player p : Bukkit.getOnlinePlayers()) {
 					player.hidePlayer(p);
-					player.sendMessage(ChatColor.translateAlternateColorCodes('&', utils.prefix + " &cPlayer visibility disabled"));
+					player.sendMessage(ChatColor.translateAlternateColorCodes('&', Utils.prefix + " &cPlayer visibility disabled"));
 				}
 			}
 		} else {
@@ -115,14 +115,14 @@ public class vanishtoolListener implements org.bukkit.event.Listener {
 			hidden.setItemMeta(hiddenMeta);
 			if ((player.getItemInHand().equals(hidden)) && ((action.equals(Action.RIGHT_CLICK_AIR))
 					|| ((action.equals(Action.RIGHT_CLICK_BLOCK)) && (player.getItemInHand().equals(hidden))))) {
-				vanishtoolListener ab = new vanishtoolListener(ChatColor.DARK_GRAY + "�" + ChatColor.GRAY
+				VanishtoolListener ab = new VanishtoolListener(ChatColor.DARK_GRAY + "�" + ChatColor.GRAY
 						+ "Toggled player visibility" + ChatColor.DARK_GRAY + "�");
 				ab.Send(player);
 				hiding.add(player);
 				player.getInventory().setItem(8, shown);
 				for (Player p : Bukkit.getOnlinePlayers()) {
 					player.showPlayer(p);
-					player.sendMessage(ChatColor.translateAlternateColorCodes('&', utils.prefix + " &aPlayer visibility enabled"));
+					player.sendMessage(ChatColor.translateAlternateColorCodes('&', Utils.prefix + " &aPlayer visibility enabled"));
 				}
 			}
 		}

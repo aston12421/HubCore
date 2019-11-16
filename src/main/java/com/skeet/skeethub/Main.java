@@ -14,8 +14,8 @@ import com.skeet.skeethub.listeners.BlockedCommandsListener;
 import com.skeet.skeethub.listeners.PlayerChat;
 import com.skeet.skeethub.listeners.PlayerEvents;
 import com.skeet.skeethub.listeners.Welcome;
-import com.skeet.skeethub.listeners.armour;
-import com.skeet.skeethub.listeners.vanishtoolListener;
+import com.skeet.skeethub.listeners.Armour;
+import com.skeet.skeethub.listeners.VanishtoolListener;
 
 import net.milkbowl.vault.chat.Chat;
 
@@ -37,14 +37,14 @@ public class Main extends JavaPlugin implements Listener {
 		saveConfig();
 		reloadConfig();
 
-		Bukkit.getPluginManager().registerEvents(new vanishtoolListener(null), this);
+		Bukkit.getPluginManager().registerEvents(new VanishtoolListener(null), this);
 
 		getCommand("message").setExecutor(new PrivateMessageCommand(this));
 		getCommand("links").setExecutor(new LinksCommand(this));
 
 		getServer().getPluginManager().registerEvents(new Welcome(), this);
 		getServer().getPluginManager().registerEvents(new PlayerChat(), this);
-		getServer().getPluginManager().registerEvents(new armour(), this);
+		getServer().getPluginManager().registerEvents(new Armour(), this);
 
 		getServer().getPluginManager().registerEvents(new HubBoost(), this);
 		getServer().getPluginManager().registerEvents(new HubScoreboard(), this);
