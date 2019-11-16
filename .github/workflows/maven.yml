@@ -23,6 +23,6 @@ jobs:
       with:
         tag_name: ${{ github.ref }}
         release_name: Release ${{ github.ref }}
-        body: | Automatic Build |
+        body: Automatic Build
         draft: true
         prerelease: false
