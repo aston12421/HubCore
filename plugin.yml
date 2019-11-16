@@ -1,8 +1,0 @@
-name: SkeetHub
-main: skeet.Main
-version: 1.0
-author: aston
-
-commands:
-  links:
-  message:

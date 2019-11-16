@@ -1,11 +1,9 @@
-package skeet.listeners;
+package com.skeet.skeethub.listeners;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerQuitEvent;
 
 public class BlockedCommandsListener implements org.bukkit.event.Listener
 {

@@ -1,11 +1,9 @@
-package skeet.hub;
+package com.skeet.skeethub.hub;
 
 import java.util.ArrayList;
 
 import org.bukkit.Bukkit;
-
 import org.bukkit.ChatColor;
-import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -15,11 +13,11 @@ import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Score;
 import org.bukkit.scoreboard.Scoreboard;
-import org.bukkit.scoreboard.ScoreboardManager;
 import org.bukkit.scoreboard.Team;
 
-import ru.tehkode.permissions.PermissionUser;
-import ru.tehkode.permissions.bukkit.PermissionsEx;
+import com.skeet.skeethub.Main;
+
+import net.milkbowl.vault.chat.Chat;
 
 public class HubScoreboard implements Listener {
 	public HubScoreboard() {
@@ -45,7 +43,7 @@ public class HubScoreboard implements Listener {
 
 	public void createScoreboard(Player player) {
 		int online_int = online.size();
-		PermissionUser user = PermissionsEx.getUser(player);
+		Chat chat = Main.getInstance().getChat();
 		Scoreboard board = Bukkit.getScoreboardManager().getNewScoreboard();
 		Objective o = board.registerNewObjective("Skeet Network", "dummy");
 		o.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&2&lSkeet"));
@@ -53,7 +51,7 @@ public class HubScoreboard implements Listener {
 		Team test = board.registerNewTeam("test");
 		test.setPrefix(ChatColor.translateAlternateColorCodes('&', "&7&m"));
 		test.setSuffix("----------------");
-		
+
 		Team test1 = board.registerNewTeam("test1");
 		test1.setPrefix(ChatColor.translateAlternateColorCodes('&', "&7&m"));
 		test1.setSuffix("----------------");
@@ -63,9 +61,10 @@ public class HubScoreboard implements Listener {
 		Score spacer = o.getScore(ChatColor.translateAlternateColorCodes('&', "&r&7&m"));
 		Score spacer3 = o.getScore("");
 		Score rankt = o.getScore(ChatColor.translateAlternateColorCodes('&', "&aRank"));
-		Score rank = o.getScore(ChatColor.translateAlternateColorCodes('&', "&f" + user.getSuffix()));
+		Score rank = o.getScore(ChatColor.translateAlternateColorCodes('&', "&f" + chat.getPlayerSuffix(player)));
 		Score onlinet = o.getScore(ChatColor.translateAlternateColorCodes('&', "&aOnline"));
-		Score online = o.getScore(ChatColor.translateAlternateColorCodes('&', "" + online_int + " / " + Bukkit.getMaxPlayers()));
+		Score online = o.getScore(
+				ChatColor.translateAlternateColorCodes('&', "" + online_int + " / " + Bukkit.getMaxPlayers()));
 		Score spacer1 = o.getScore(ChatColor.translateAlternateColorCodes('&', " "));
 		Score spacer2 = o.getScore(ChatColor.translateAlternateColorCodes('&', "  "));
 		Score ip = o.getScore(ChatColor.translateAlternateColorCodes('&', ""));

@@ -1,4 +1,4 @@
-package skeet.hub;
+package com.skeet.skeethub.hub;
 
 public class utils {
 	

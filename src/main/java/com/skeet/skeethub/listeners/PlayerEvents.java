@@ -1,4 +1,4 @@
-package skeet.listeners;
+package com.skeet.skeethub.listeners;
 
 import org.bukkit.ChatColor;
 
@@ -18,7 +18,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerPickupItemEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
 
-import skeet.Main;
+import com.skeet.skeethub.Main;
 
 public class PlayerEvents implements Listener
 {

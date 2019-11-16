@@ -1,12 +1,10 @@
-package skeet.hub;
+package com.skeet.skeethub.hub;
 
 import org.bukkit.GameMode;
-import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerToggleFlightEvent;
-import org.bukkit.util.Vector;
 
 public class HubBoost implements org.bukkit.event.Listener
 {
