@@ -1,4 +1,4 @@
-name: Java CI
+name: Build
 
 on: [push]
 
@@ -14,7 +14,7 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-      run: mvn install -B package --file pom.xml
+      run: mvn install -B package --file pom_workflow.xml
     - name: Create a Release
       id: create_release
       uses: actions/create-release@v1
@@ -33,7 +33,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-        asset_path: ./target/SkeetHub-[0-9]+.[0-9].jar
+        asset_path: ./target/SkeetHub-UNRELEASED.jar
         asset_name: SkeetHub-UNRELEASED.jar
         asset_content_type: application/jar
 
