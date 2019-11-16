@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/aston/OneDrive/Desktop/Premade 1.7.x - 1.11.x/MAIN SERVER/plugins/Vault (1).jar"/>
+	<classpathentry kind="lib" path="C:/Users/aston/OneDrive/Desktop/1.7.10/spigot.jar"/>
+	<classpathentry kind="lib" path="C:/Users/aston/OneDrive/Desktop/1.7.10/plugins/PermissionsEx-1.22.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/aston/OneDrive/Desktop/Premade 1.7.x - 1.11.x/BUNGEE SERVER/BungeeCord.jar"/>
+	<classpathentry kind="output" path=""/>
+</classpath>
