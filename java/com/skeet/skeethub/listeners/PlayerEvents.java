@@ -1,10 +1,12 @@
 package com.skeet.skeethub.listeners;
 
 import org.bukkit.ChatColor;
-
+import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Cancellable;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
@@ -13,6 +15,7 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
+import org.bukkit.event.player.PlayerChatTabCompleteEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerPickupItemEvent;
@@ -99,4 +102,13 @@ public class PlayerEvents implements Listener
   public void onWeather(WeatherChangeEvent event) {
     event.setCancelled(true);
   }
+  
+  @EventHandler (priority = EventPriority.HIGHEST)
+  public void onTabComplete(PlayerChatTabCompleteEvent e) {
+      Player p = e.getPlayer();
+      if (!p.hasPermission("skeet.staff.admin")){
+      e.getTabCompletions().clear();
+      }
+  }
+
 }

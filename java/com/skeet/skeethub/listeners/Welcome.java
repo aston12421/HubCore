@@ -6,8 +6,11 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
+import com.skeet.skeethub.Main;
+
 public class Welcome implements org.bukkit.event.Listener
 {
+	private Main plugin;
   public Welcome() {}
   
   @EventHandler
@@ -17,11 +20,19 @@ public class Welcome implements org.bukkit.event.Listener
     if (player.hasPlayedBefore()) {
       event.setJoinMessage(null);
       player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7&m----------------------------------------------------"));
-      player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7 Welcome to the &2&lSkeet Network&7, " + player.getName()));
-      player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7* &2&lForums: &7https://skeet.best"));
-      player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7* &2&lTwitter: &7twitter.com/skeetnetwork"));
-      player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7* &2&lDiscord: &7https://discord.gg/6fhEqWF"));
-      player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7* &2&lStore: &7store.skeet.best"));
+      player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7 Welcome to the " + plugin.getConfig().getString("welcome.servername")+ "&7, " + player.getName()));
+      if (plugin.getConfig().getString("welcome.socials.toggle.forums") == "on") {
+    	  player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7* &2&lForums: " + plugin.getConfig().getString("welcome.socials.url.forums")));
+      }
+      if (plugin.getConfig().getString("welcome.socials.toggle.twitter") == "on") {
+    	  player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7* &2&lTwitter: " + plugin.getConfig().getString("welcome.socials.url.forums")));
+      }
+      if (plugin.getConfig().getString("welcome.socials.toggle.discord") == "on") {
+    	  player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7* &2&lDiscord: " + plugin.getConfig().getString("welcome.socials.url.forums")));
+      }
+      if (plugin.getConfig().getString("welcome.socials.toggle.store") == "on") {
+    	  player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7* &2&lStore: " + plugin.getConfig().getString("welcome.socials.url.forums")));
+      }
       player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7&m----------------------------------------------------"));
     }
   }
@@ -30,7 +41,6 @@ public class Welcome implements org.bukkit.event.Listener
   @EventHandler
   public void onQuit(PlayerQuitEvent event)
   {
-    Player player = event.getPlayer();
     event.setQuitMessage(null);
   }
 }

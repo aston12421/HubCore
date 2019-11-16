@@ -58,13 +58,13 @@ public class HubScoreboard implements Listener {
 		test1.setPrefix(ChatColor.translateAlternateColorCodes('&', "&7&m--------"));
 		test1.setSuffix("----------------");
 		Team serverip = board.registerNewTeam("serverip");
-		serverip.setPrefix(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("scoreboard.ip.color")));
-		serverip.setSuffix(plugin.getConfig().getString("scoreboard.ip"));
+		serverip.setPrefix(ChatColor.translateAlternateColorCodes('&', "&b"));
+		serverip.setSuffix("play.skeetmc.net");
 		Score spacer = o.getScore(ChatColor.translateAlternateColorCodes('&', "&r&7&m"));
 		Score spacer3 = o.getScore(ChatColor.translateAlternateColorCodes('&', "&7&m"));
-		Score rankt = o.getScore(ChatColor.translateAlternateColorCodes('&', "&aRank"));
+		Score rankt = o.getScore(ChatColor.translateAlternateColorCodes('&', "&3Rank"));
 		Score rank = o.getScore(ChatColor.translateAlternateColorCodes('&', "&f" + chat.getPlayerSuffix(player)));
-		Score onlinet = o.getScore(ChatColor.translateAlternateColorCodes('&', "&aOnline"));
+		Score onlinet = o.getScore(ChatColor.translateAlternateColorCodes('&', "&3Online"));
 		Score online = o.getScore(
 				ChatColor.translateAlternateColorCodes('&', "" + online_int + " / " + Bukkit.getMaxPlayers()));
 		Score spacer1 = o.getScore(ChatColor.translateAlternateColorCodes('&', " "));
