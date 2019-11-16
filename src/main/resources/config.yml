@@ -1,4 +1,6 @@
-prefix: '&8(&2Skeet&8)'
-noperm: '&cNo Permission!'
+skeet:
+  prefix: '&8(&2Skeet&8)'
+  noperm: '&cNo Permission!'
 
-scoreboardtitle: '&3&lHydro Network'
+scoreboard:
+  title: '&3&lHydro Network'

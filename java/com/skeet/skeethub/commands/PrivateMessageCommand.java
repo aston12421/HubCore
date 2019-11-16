@@ -24,7 +24,7 @@ public class PrivateMessageCommand implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		Player player = (Player) sender;
 		if (!player.hasPermission("skeet.pm")) {
-			String noperm = plugin.getConfig().getString("noperm");
+			String noperm = plugin.getConfig().getString("skeet.noperm");
 			player.sendMessage(ChatColor.translateAlternateColorCodes('&', noperm));
 		} else if (args.length == 0) {
 			player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cUsage: /message <player> <message...>"));

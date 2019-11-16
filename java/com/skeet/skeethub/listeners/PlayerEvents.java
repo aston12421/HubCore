@@ -32,22 +32,13 @@ public class PlayerEvents implements Listener
   @EventHandler
   public void onBlockBreak(BlockBreakEvent event)
   {
-    Player player = event.getPlayer();
-    if (!player.isOp()) {
       event.setCancelled(true);
-    } else {
-      event.setCancelled(false);
-    }
   }
   
   @EventHandler
   public void onBlockPlace(BlockPlaceEvent event) {
     Player player = event.getPlayer();
-    if (!player.isOp()) {
       event.setCancelled(true);
-    } else {
-      event.setCancelled(false);
-    }
   }
   
   @EventHandler
@@ -56,7 +47,7 @@ public class PlayerEvents implements Listener
     Player player = event.getPlayer();
     if (!player.hasPermission("skeet.staff")) {
       event.setCancelled(true);
-      player.sendMessage(ChatColor.translateAlternateColorCodes('&', (utils.scoreboardtitle + " &7You cannot chat in this area!")));
+      player.sendMessage(ChatColor.translateAlternateColorCodes('&', (plugin.getConfig().getString("skeet.prefix") + " &7You cannot chat in this area!")));
     }
     else if (player.hasPermission("skeet.staff")) {
       event.setCancelled(false);
@@ -66,33 +57,19 @@ public class PlayerEvents implements Listener
   @EventHandler
   public void onItemPickup(PlayerPickupItemEvent event)
   {
-    Player player = event.getPlayer();
-    if (!player.isOp()) {
       event.setCancelled(true);
-    } else {
-      event.setCancelled(false);
-    }
   }
   
   @EventHandler
   public void onInvMove(InventoryClickEvent event) {
-    HumanEntity player = event.getWhoClicked();
-    if (!player.isOp()) {
       event.setCancelled(true);
-    } else {
-      event.setCancelled(false);
-    }
   }
   
   @EventHandler
   public void onItemDrop(PlayerDropItemEvent event)
   {
     Player player = event.getPlayer();
-    if (!player.isOp()) {
       event.setCancelled(true);
-    } else {
-      event.setCancelled(false);
-    }
   }
   
   @EventHandler

@@ -12,6 +12,8 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import com.skeet.skeethub.hub.utils;
+
 import net.md_5.bungee.api.ChatColor;
 
 public class vanishtoolListener implements org.bukkit.event.Listener {
@@ -98,6 +100,7 @@ public class vanishtoolListener implements org.bukkit.event.Listener {
 				player.getInventory().setItem(8, hidden);
 				for (Player p : Bukkit.getOnlinePlayers()) {
 					player.hidePlayer(p);
+					player.sendMessage(ChatColor.translateAlternateColorCodes('&', utils.prefix + " &cPlayer visibility disabled"));
 				}
 			}
 		} else {
@@ -119,6 +122,7 @@ public class vanishtoolListener implements org.bukkit.event.Listener {
 				player.getInventory().setItem(8, shown);
 				for (Player p : Bukkit.getOnlinePlayers()) {
 					player.showPlayer(p);
+					player.sendMessage(ChatColor.translateAlternateColorCodes('&', utils.prefix + " &aPlayer visibility enabled"));
 				}
 			}
 		}

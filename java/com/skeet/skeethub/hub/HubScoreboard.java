@@ -20,6 +20,8 @@ import com.skeet.skeethub.Main;
 import net.milkbowl.vault.chat.Chat;
 
 public class HubScoreboard implements Listener {
+	
+	private Main plugin;
 	public HubScoreboard() {
 	}
 
@@ -46,7 +48,7 @@ public class HubScoreboard implements Listener {
 		Chat chat = Main.getInstance().getChat();
 		Scoreboard board = Bukkit.getScoreboardManager().getNewScoreboard();
 		Objective o = board.registerNewObjective("Skeet Network", "dummy");
-		o.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&2&lSkeet Network"));
+		o.setDisplayName(ChatColor.translateAlternateColorCodes('&', (plugin.getConfig().getString("scoreboard.title"))));
 		o.setDisplaySlot(DisplaySlot.SIDEBAR);
 		Team test = board.registerNewTeam("test");
 		test.setPrefix(ChatColor.translateAlternateColorCodes('&', "&7&m--------"));
