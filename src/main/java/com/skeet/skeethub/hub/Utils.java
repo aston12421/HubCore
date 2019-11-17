@@ -2,7 +2,7 @@ package com.skeet.skeethub.hub;
 
 import com.skeet.skeethub.Main;
 
-public class utils {
+public class Utils {
 	
 	private static Main plugin;
 	

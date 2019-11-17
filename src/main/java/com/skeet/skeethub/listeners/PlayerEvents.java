@@ -22,7 +22,7 @@ import org.bukkit.event.player.PlayerPickupItemEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
 
 import com.skeet.skeethub.Main;
-import com.skeet.skeethub.hub.utils;
+import com.skeet.skeethub.hub.Utils;
 
 public class PlayerEvents implements Listener
 {
