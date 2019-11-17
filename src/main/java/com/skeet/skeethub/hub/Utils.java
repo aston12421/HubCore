@@ -4,7 +4,7 @@ import com.skeet.skeethub.Main;
 
 public class Utils {
 	
-	public static String prefix = Main.getInstance().getConfig().getString("hub.prefix");
+	public static String prefix = (Main.getInstance().getConfig().getString("hub.prefix") + " ");
 
 	public static String noperm = Main.getInstance().getConfig().getString("hub.nopermission");
 	
