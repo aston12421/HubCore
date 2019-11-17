@@ -31,12 +31,12 @@ public class BuildCommand implements CommandExecutor {
 			if (!buildmode.contains(player)) {
 				buildmode.add(player);
 				player.setGameMode(GameMode.CREATIVE);
-				player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&abuildmode enabled"));
+				player.sendMessage(ChatColor.translateAlternateColorCodes('&', Utils.prefix + "&abuildmode enabled"));
 			} else if (player.hasPermission("hub.build")) {
 				if (buildmode.contains(player)) {
 					buildmode.remove(player);
 					player.setGameMode(GameMode.SURVIVAL);
-					player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cbuildmode disabled"));
+					player.sendMessage(ChatColor.translateAlternateColorCodes('&', Utils.prefix + "&cbuildmode disabled"));
 				}
 			}
 		}
