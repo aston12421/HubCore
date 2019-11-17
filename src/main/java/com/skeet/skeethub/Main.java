@@ -29,6 +29,7 @@ public class Main extends JavaPlugin implements Listener {
 	public Main() {
 	}
 
+
 	public void onEnable() {
 
 		instance = this;
