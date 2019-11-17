@@ -18,21 +18,7 @@ public class PlayerChat implements Listener {
 	public void chatFormat(AsyncPlayerChatEvent event) {
 		Player player = event.getPlayer();
 		Chat chat = Main.getInstance().getChat();
-		if (player.hasPermission("skeet.chat.trial-moderator")) {
-			event.setFormat(ChatColor.translateAlternateColorCodes('&', chat.getPlayerPrefix(player) + "&7 "
-					+ player.getDisplayName() + "&8: " + "&f" + event.getMessage()));
-		}
-		if (player.hasPermission("skeet.chat.moderator")) {
-			event.setFormat(ChatColor.translateAlternateColorCodes('&', chat.getPlayerPrefix(player) + "&7 "
-					+ player.getDisplayName() + "&8: " + "&f" + event.getMessage()));
-		}
-		if (player.hasPermission("skeet.chat.admin")) {
-			event.setFormat(ChatColor.translateAlternateColorCodes('&', chat.getPlayerPrefix(player) + "&7 "
-					+ player.getDisplayName() + "&8: " + "&f" + event.getMessage()));
-		}
-		if (player.hasPermission("skeet.chat.owner")) {
-			event.setFormat(ChatColor.translateAlternateColorCodes('&', chat.getPlayerPrefix(player) + "&7 "
-					+ player.getDisplayName() + "&8: " + "&f" + event.getMessage()));
-		}
+		event.setFormat(ChatColor.translateAlternateColorCodes('&',
+				chat.getPlayerPrefix(player) + "&7 " + player.getDisplayName() + "&8: " + "&f" + event.getMessage()));
 	}
 }

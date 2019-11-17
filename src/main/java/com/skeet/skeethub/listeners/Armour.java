@@ -24,7 +24,7 @@ public class Armour implements Listener {
 	public void onFirstJoin(PlayerJoinEvent event) {
 		Player player = event.getPlayer();
 		Chat chat = Main.getInstance().getChat();
-		if (player.hasPermission("skeet.owner")) {
+		if (chat.playerInGroup(player, "owner")) {
 			ItemStack helm = new ItemStack(Material.LEATHER_HELMET);
 			LeatherArmorMeta meta = (LeatherArmorMeta) helm.getItemMeta();
 			meta.setColor(Color.fromRGB(255, 0, 0));
@@ -35,7 +35,7 @@ public class Armour implements Listener {
 			helm.setItemMeta(meta);
 			player.getInventory().setHelmet(helm);
 
-		} else if (player.hasPermission("skeet.default")) {
+		} else if (chat.playerInGroup(player, "default")) {
 			ItemStack helm = new ItemStack(Material.LEATHER_HELMET);
 			LeatherArmorMeta meta = (LeatherArmorMeta) helm.getItemMeta();
 			meta.setColor(Color.fromRGB(100, 100, 100));
@@ -46,7 +46,7 @@ public class Armour implements Listener {
 			helm.setItemMeta(meta);
 			player.getInventory().setHelmet(helm);
 
-		} else if (player.hasPermission("skeet.admin")) {
+		} else if (chat.playerInGroup(player, "admin")) {
 			ItemStack helm = new ItemStack(Material.LEATHER_HELMET);
 			LeatherArmorMeta meta = (LeatherArmorMeta) helm.getItemMeta();
 			meta.setColor(Color.fromRGB(255, 112, 112));
@@ -57,7 +57,7 @@ public class Armour implements Listener {
 			helm.setItemMeta(meta);
 			player.getInventory().setHelmet(helm);
 
-		} else if (player.hasPermission("skeet.mod")) {
+		} else if (chat.playerInGroup(player, "moderator")) {
 			ItemStack helm = new ItemStack(Material.LEATHER_HELMET);
 			LeatherArmorMeta meta = (LeatherArmorMeta) helm.getItemMeta();
 			meta.setColor(Color.fromRGB(0, 149, 255));
@@ -68,7 +68,7 @@ public class Armour implements Listener {
 			helm.setItemMeta(meta);
 			player.getInventory().setHelmet(helm);
 
-		} else if (player.hasPermission("skeet.tmod")) {
+		} else if (chat.playerInGroup(player, "trial-moderator")) {
 			ItemStack helm = new ItemStack(Material.LEATHER_HELMET);
 			LeatherArmorMeta meta = (LeatherArmorMeta) helm.getItemMeta();
 			meta.setColor(Color.fromRGB(212, 0, 255));

@@ -12,6 +12,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import com.skeet.skeethub.Main;
+import com.skeet.skeethub.hub.Utils;
 
 public class PrivateMessageCommand implements CommandExecutor {
 	private Main plugin;
@@ -24,8 +25,7 @@ public class PrivateMessageCommand implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		Player player = (Player) sender;
 		if (!player.hasPermission("skeet.pm")) {
-			String noperm = plugin.getConfig().getString("skeet.noperm");
-			player.sendMessage(ChatColor.translateAlternateColorCodes('&', noperm));
+			player.sendMessage(ChatColor.translateAlternateColorCodes('&', Utils.prefix + Utils.nopermission));
 		} else if (args.length == 0) {
 			player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cUsage: /message <player> <message...>"));
 		} else if (args.length >= 1) {

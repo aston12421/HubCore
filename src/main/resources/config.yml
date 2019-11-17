@@ -1,6 +1,16 @@
-skeet:
+hub:
   prefix: '&d&lGloom &7|'
-  noperm: '&cNo Permission!'
+  nopermission: '&cNo Permission!'
+  unknowncommand: '&cUnknown Command.'
+  blockedcommands:
+    - 'pl'
+    - 'plugins'
+    - 'about'
+    - 'ver'
+    - 'version'
+    - 'pex'
+    - '?'
+
 
 
 welcome:
