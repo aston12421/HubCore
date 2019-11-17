@@ -3,6 +3,7 @@ package com.skeet.skeethub.commands;
 import java.util.ArrayList;
 
 import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -29,10 +30,12 @@ public class BuildCommand implements CommandExecutor {
 		if (player.hasPermission("hub.build")) {
 			if (!buildmode.contains(player)) {
 				buildmode.add(player);
+				player.setGameMode(GameMode.CREATIVE);
 				player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&abuildmode enabled"));
 			} else if (player.hasPermission("hub.build")) {
 				if (buildmode.contains(player)) {
 					buildmode.remove(player);
+					player.setGameMode(GameMode.SURVIVAL);
 					player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cbuildmode disabled"));
 				}
 			}
