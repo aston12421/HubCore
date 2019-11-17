@@ -1,11 +1,18 @@
 package com.skeet.skeethub;
 
+import java.io.File;
+import java.io.IOException;
+
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.skeet.skeethub.commands.ConfigReloadCommand;
 import com.skeet.skeethub.commands.LinksCommand;
 import com.skeet.skeethub.commands.PrivateMessageCommand;
 import com.skeet.skeethub.hub.HubBoost;
@@ -32,7 +39,6 @@ public class Main extends JavaPlugin implements Listener {
 		instance = this;
 
 		setupChat();
-
 		getConfig().options().copyDefaults(true);
 		saveConfig();
 		reloadConfig();
@@ -41,13 +47,14 @@ public class Main extends JavaPlugin implements Listener {
 
 		getCommand("message").setExecutor(new PrivateMessageCommand(this));
 		getCommand("links").setExecutor(new LinksCommand(this));
+		getCommand("gloom").setExecutor(new ConfigReloadCommand(this));
 
-		getServer().getPluginManager().registerEvents(new Welcome(), this);
+		getServer().getPluginManager().registerEvents(new Welcome(this), this);
 		getServer().getPluginManager().registerEvents(new PlayerChat(), this);
 		getServer().getPluginManager().registerEvents(new armour(), this);
 
 		getServer().getPluginManager().registerEvents(new HubBoost(), this);
-		getServer().getPluginManager().registerEvents(new HubScoreboard(), this);
+		getServer().getPluginManager().registerEvents(new HubScoreboard(this), this);
 		getServer().getPluginManager().registerEvents(new BlockedCommandsListener(), this);
 
 		getServer().getPluginManager().registerEvents(new PlayerEvents(this), this);

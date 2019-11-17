@@ -1,31 +1,17 @@
 skeet:
-  prefix: '&8(&5Gloom&8)'
+  prefix: '&d&lGloom &7|'
   noperm: '&cNo Permission!'
 
-scoreboard:
-  title: '&3&lHydro'
-  ip: 'test.com'
-    color: '&b'
 
 welcome:
-  servername: '&5Gloom Network'
-  socials:
-    toggle:
-      forums: 'on'
-      twitter: 'on'
-      discord: 'on'
-      store: 'on'
-    url:
-      forums: 'test.com'
-      twitter: 'test.com'
-      discord: 'test.com'
-      store: 'test.com'
-    social-name-color:
-      forums: ''
-      twitter: ''
-      discord: ''
-        store: ''
+  servername: '&7the &d&lGloom Network'
+  message:
+    - '&7&m----------------'
+    - ' &7* &dDiscord: &7https://discord.gg'
+    - '&7&m----------------'
 
 
-
-
+scoreboard:
+  title: '&d&lGloom Network'
+  theme: '&d'
+  serverip: '&7play.gloom.com'
