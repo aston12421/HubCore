@@ -21,10 +21,10 @@ public class BlockedCommandsListener implements org.bukkit.event.Listener {
 		String message = event.getMessage();
 		if (!player.hasPermission("hub.admin")) {
 			for (String string : list) {
-				if (message.equalsIgnoreCase("/" + list)) {
-					player.sendMessage(ChatColor.DARK_GREEN + Utils.unknown);
-					event.setCancelled(true);
+				if (message.equalsIgnoreCase("/" + string)) {
+					player.sendMessage(ChatColor.translateAlternateColorCodes('&', Utils.unknown));
 				}
+					event.setCancelled(true);
 			}
 		}
 	}

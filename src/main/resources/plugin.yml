@@ -6,6 +6,11 @@ depend: [Vault]
 
 commands:
   links:
+    aliases: [discord, twitter, forums, store, youtube]
   message:
-  hub:
+    aliases: [pm, m, msg]
+  hubreload:
+    aliases: [hrl, hubrl]
   build:
+  help:
+    aliases: [support]

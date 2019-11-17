@@ -10,6 +10,7 @@ hub:
     - 'version'
     - 'pex'
     - '?'
+  theme: '&6'
 
 
 
@@ -17,7 +18,9 @@ welcome:
   servername: '&7the &d&lGloom Network'
   message:
     - '&7&m----------------'
-    - ' &7* &dDiscord: &7https://discord.gg'
+    - ' &7* &dSocial: &7https://yourlink.com'
+    - ' &7* &dSocial: &7https://yourlink.com'
+    - ' &7* &dSocial: &7https://yourlink.com'
     - '&7&m----------------'
 
 
@@ -25,3 +28,8 @@ scoreboard:
   title: '&d&lGloom Network'
   theme: '&d'
   serverip: '&7play.gloom.com'
+
+help:
+  message:
+    - 'Contact support'
+    - 'Contact support'

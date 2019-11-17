@@ -10,6 +10,8 @@ public class Utils {
 	
 	public static String unknown = Main.getInstance().getConfig().getString("hub.unknowncomamnd");
 	
+	public static String theme = Main.getInstance().getConfig().getString("hub.theme");
+	
 
 	public static String welcome_servername = Main.getInstance().getConfig().getString("welcome.servername");
 	

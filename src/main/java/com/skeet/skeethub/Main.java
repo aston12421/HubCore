@@ -8,6 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.skeet.skeethub.commands.BuildCommand;
 import com.skeet.skeethub.commands.ConfigReloadCommand;
+import com.skeet.skeethub.commands.HelpCommand;
 import com.skeet.skeethub.commands.LinksCommand;
 import com.skeet.skeethub.commands.PrivateMessageCommand;
 import com.skeet.skeethub.hub.HubBoost;
@@ -45,9 +46,11 @@ public class Main extends JavaPlugin implements Listener {
 
 		getCommand("links").setExecutor(new LinksCommand(this));
 
-		getCommand("hub").setExecutor(new ConfigReloadCommand(this));
+		getCommand("hubreload").setExecutor(new ConfigReloadCommand(this));
 
 		getCommand("build").setExecutor(new BuildCommand(this));
+		
+		getCommand("help").setExecutor(new HelpCommand(this));
 
 		getServer().getPluginManager().registerEvents(new Welcome(), this);
 
