@@ -7,4 +7,5 @@ depend: [Vault]
 commands:
   links:
   message:
-  gloom:
+  hub:
+  build:

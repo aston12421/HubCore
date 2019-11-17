@@ -6,6 +6,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.skeet.skeethub.commands.BuildCommand;
 import com.skeet.skeethub.commands.ConfigReloadCommand;
 import com.skeet.skeethub.commands.LinksCommand;
 import com.skeet.skeethub.commands.PrivateMessageCommand;
@@ -36,18 +37,26 @@ public class Main extends JavaPlugin implements Listener {
 		saveConfig();
 		reloadConfig();
 
-		Bukkit.getPluginManager().registerEvents(new VanishtoolListener(null), this);
+		Bukkit.getPluginManager().registerEvents(new VanishtoolListener(this), this);
 
 		getCommand("message").setExecutor(new PrivateMessageCommand(this));
+		
 		getCommand("links").setExecutor(new LinksCommand(this));
+		
 		getCommand("hub").setExecutor(new ConfigReloadCommand(this));
+		
+		getCommand("build").setExecutor(new BuildCommand(this));
 
 		getServer().getPluginManager().registerEvents(new Welcome(this), this);
+		
 		getServer().getPluginManager().registerEvents(new PlayerChat(), this);
+		
 		// getServer().getPluginManager().registerEvents(new Armour(), this);
 
 		getServer().getPluginManager().registerEvents(new HubBoost(), this);
+		
 		getServer().getPluginManager().registerEvents(new HubScoreboard(this), this);
+		
 		getServer().getPluginManager().registerEvents(new BlockedCommandsListener(this), this);
 
 		getServer().getPluginManager().registerEvents(new PlayerEvents(this), this);

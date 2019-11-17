@@ -6,7 +6,7 @@ public class Utils {
 	
 	private static Main plugin;
 	
-	public static String prefix = plugin.getConfig().getString("hub.sprefix") + " ";
+	public static String prefix = (plugin.getConfig().getString("hub.sprefix") + " ");
 	
 	public static String nopermission = plugin.getConfig().getString("hub.nopermission");
 	

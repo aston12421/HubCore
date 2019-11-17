@@ -15,6 +15,7 @@ import org.bukkit.event.player.PlayerPickupItemEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
 
 import com.skeet.skeethub.Main;
+import com.skeet.skeethub.commands.BuildCommand;
 
 public class PlayerEvents implements Listener {
 	private Main plugin;
@@ -25,29 +26,42 @@ public class PlayerEvents implements Listener {
 
 	@EventHandler
 	public void onBlockBreak(BlockBreakEvent event) {
-		event.setCancelled(true);
+		Player player = event.getPlayer();
+		if (!BuildCommand.buildmode.contains(player)) {
+			event.setCancelled(true);
+		}
 	}
 
 	@EventHandler
 	public void onBlockPlace(BlockPlaceEvent event) {
 		Player player = event.getPlayer();
-		event.setCancelled(true);
+		if (!BuildCommand.buildmode.contains(player)) {
+			event.setCancelled(true);
+		}
 	}
 
 	@EventHandler
 	public void onItemPickup(PlayerPickupItemEvent event) {
-		event.setCancelled(true);
+		Player player = event.getPlayer();
+		if (!BuildCommand.buildmode.contains(player)) {
+			event.setCancelled(true);
+		}
 	}
 
 	@EventHandler
 	public void onInvMove(InventoryClickEvent event) {
-		event.setCancelled(true);
+		Player player = (Player) event.getWhoClicked();
+		if (!BuildCommand.buildmode.contains(player)) {
+			event.setCancelled(true);
+		}
 	}
 
 	@EventHandler
 	public void onItemDrop(PlayerDropItemEvent event) {
 		Player player = event.getPlayer();
-		event.setCancelled(true);
+		if (!BuildCommand.buildmode.contains(player)) {
+			event.setCancelled(true);
+		}
 	}
 
 	@EventHandler
