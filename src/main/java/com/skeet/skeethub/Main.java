@@ -61,6 +61,10 @@ public class Main extends JavaPlugin implements Listener {
 
 		getServer().getPluginManager().registerEvents(new PlayerEvents(this), this);
 	}
+	
+	public void onDisable() {
+		instance = null;
+	}
 
 	private boolean setupChat() {
 		RegisteredServiceProvider<Chat> chatProvider = getServer().getServicesManager()
