@@ -80,6 +80,10 @@ public class Main extends JavaPlugin implements Listener {
 		return instance;
 	}
 
+	public FileManager getFileManager() {
+		return fileManager;
+	}
+
 	public Chat getChat() {
 		return chat;
 	}
