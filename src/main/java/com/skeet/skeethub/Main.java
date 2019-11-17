@@ -53,8 +53,6 @@ public class Main extends JavaPlugin implements Listener {
 
 		getServer().getPluginManager().registerEvents(new PlayerChat(), this);
 
-		// getServer().getPluginManager().registerEvents(new Armour(), this);
-
 		getServer().getPluginManager().registerEvents(new HubBoost(), this);
 
 		getServer().getPluginManager().registerEvents(new HubScoreboard(), this);
