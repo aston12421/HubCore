@@ -22,7 +22,7 @@ public class ConfigReloadCommand implements CommandExecutor {
 		Player player = (Player) sender;
 
 		if (!player.hasPermission("hub.admin")) {
-			player.sendMessage(Utils.prefix + Utils.noperm);
+			player.sendMessage(ChatColor.translateAlternateColorCodes('&', Utils.prefix + Utils.noperm));
 			if (args[0] == "reload") {
 				Main.getInstance().reloadConfig();
 				HubScoreboard.createScoreboard(player);

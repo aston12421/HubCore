@@ -11,6 +11,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import com.skeet.skeethub.Main;
+import com.skeet.skeethub.hub.Utils;
 
 public class Welcome implements Listener {
 
@@ -23,8 +24,7 @@ public class Welcome implements Listener {
 			event.setJoinMessage(null);
 			player.sendMessage(ChatColor.translateAlternateColorCodes('&',
 					"&7&m----------------------------------------------------"));
-			player.sendMessage(ChatColor.translateAlternateColorCodes('&',
-					"&7 Welcome to " + Main.getInstance().getConfig().getString("welcome.servername") + "&7, " + player.getName()));
+			player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7 Welcome to " + Utils.welcome_servername + "&7, " + player.getName()));
 			for (String string : list) {
 				player.sendMessage(ChatColor.translateAlternateColorCodes('&', "" + string));
 			}

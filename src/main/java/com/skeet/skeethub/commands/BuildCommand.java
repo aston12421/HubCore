@@ -6,7 +6,6 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.command.PluginCommand;
 import org.bukkit.entity.Player;
 
 import com.skeet.skeethub.Main;
@@ -25,17 +24,16 @@ public class BuildCommand implements CommandExecutor {
 		Player player = (Player) sender;
 
 		if (!player.hasPermission("hub.build")) {
-			player.sendMessage(Utils.prefix + Utils.noperm);
+			player.sendMessage(ChatColor.translateAlternateColorCodes('&', Utils.prefix + Utils.noperm));
 		}
 		if (player.hasPermission("hub.build")) {
 			if (!buildmode.contains(player)) {
 				buildmode.add(player);
 				player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&abuildmode enabled"));
-			} else
-				if (player.hasPermission("hub.build")) {
-					if (buildmode.contains(player)) {
-						buildmode.remove(player);
-						player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cbuildmode disabled"));
+			} else if (player.hasPermission("hub.build")) {
+				if (buildmode.contains(player)) {
+					buildmode.remove(player);
+					player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cbuildmode disabled"));
 				}
 			}
 		}

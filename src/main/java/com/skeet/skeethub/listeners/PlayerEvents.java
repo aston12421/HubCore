@@ -14,11 +14,9 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerPickupItemEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
 
-import com.skeet.skeethub.Main;
 import com.skeet.skeethub.commands.BuildCommand;
 
 public class PlayerEvents implements Listener {
-
 
 	@EventHandler
 	public void onBlockBreak(BlockBreakEvent event) {
