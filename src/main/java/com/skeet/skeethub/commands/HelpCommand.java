@@ -24,20 +24,16 @@ public class HelpCommand implements CommandExecutor {
 		List<String> list = new ArrayList<String>();
 		list = (List<String>) Main.getInstance().getConfig().getList("help.message");
 
-		if (player.hasPermission("hub.admin")) {
-			player.sendMessage(ChatColor.translateAlternateColorCodes('&',
-					"&7&m----------------" + Utils.theme + "Help&7&m----------------"));
-			player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7 - &7"));
-			player.sendMessage(
-					ChatColor.translateAlternateColorCodes('&', "&7&m-------------------------------------"));
-		} else {
-			player.sendMessage(ChatColor.translateAlternateColorCodes('&',
-					"&7&m----------------" + Utils.theme + "Help&7&m----------------"));
+		if (!player.hasPermission("hub.admin")) {
+			player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&7&m---------------- " + Utils.theme + "Help&7&m ----------------"));
 			for (String string : list) {
 				player.sendMessage(ChatColor.translateAlternateColorCodes('&', "" + string));
 			}
-			player.sendMessage(
-					ChatColor.translateAlternateColorCodes('&', "&7&m-------------------------------------"));
+			player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7&m-------------------------------------"));
+		}else {
+			player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&7&m---------------- " + Utils.theme + "Help&7&m ----------------"));
+			player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7* " + Utils.theme + "/build"));
+			player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7&m-------------------------------------"));
 		}
 		return false;
 	}
