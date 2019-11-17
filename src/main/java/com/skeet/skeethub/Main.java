@@ -29,7 +29,24 @@ public class Main extends JavaPlugin implements Listener {
 	public Main() {
 	}
 
+	public static String prefix = (plugin.getConfig().getString("hub.sprefix") + " ");
+
+	public static String nopermission = plugin.getConfig().getString("hub.nopermission");
+
+	public static String unknowncommand = plugin.getConfig().getString("hub.unknowncommand");
+
+	public static String scoreboardtitle = plugin.getConfig().getString("scoreboard.title");
+
+	public static String scoreboardip = plugin.getConfig().getString("scoreboard.serverip");
+
+	public static String scoreboardtheme = plugin.getConfig().getString("scoreboard.theme");
+
+	public static String welcomeservername = plugin.getConfig().getString("welcome.servername");
+
+	public static String welcomemessage = plugin.getConfig().getString("welcome.message");
+
 	public void onEnable() {
+
 		instance = this;
 
 		setupChat();
@@ -37,29 +54,29 @@ public class Main extends JavaPlugin implements Listener {
 		saveConfig();
 		reloadConfig();
 
-		Bukkit.getPluginManager().registerEvents(new VanishtoolListener(this), this);
+		Bukkit.getPluginManager().registerEvents(new VanishtoolListener(), this);
 
 		getCommand("message").setExecutor(new PrivateMessageCommand(this));
-		
+
 		getCommand("links").setExecutor(new LinksCommand(this));
-		
+
 		getCommand("hub").setExecutor(new ConfigReloadCommand(this));
-		
+
 		getCommand("build").setExecutor(new BuildCommand(this));
 
-		getServer().getPluginManager().registerEvents(new Welcome(this), this);
-		
+		getServer().getPluginManager().registerEvents(new Welcome(), this);
+
 		getServer().getPluginManager().registerEvents(new PlayerChat(), this);
-		
+
 		// getServer().getPluginManager().registerEvents(new Armour(), this);
 
 		getServer().getPluginManager().registerEvents(new HubBoost(), this);
-		
-		getServer().getPluginManager().registerEvents(new HubScoreboard(this), this);
-		
-		getServer().getPluginManager().registerEvents(new BlockedCommandsListener(this), this);
 
-		getServer().getPluginManager().registerEvents(new PlayerEvents(this), this);
+		getServer().getPluginManager().registerEvents(new HubScoreboard(), this);
+
+		getServer().getPluginManager().registerEvents(new BlockedCommandsListener(), this);
+
+		getServer().getPluginManager().registerEvents(new PlayerEvents(), this);
 	}
 
 	private boolean setupChat() {

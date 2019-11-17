@@ -17,8 +17,6 @@ import net.md_5.bungee.api.ChatColor;
 import net.milkbowl.vault.chat.Chat;
 
 public class Armour implements Listener {
-	public Armour() {
-	}
 
 	@EventHandler
 	public void onFirstJoin(PlayerJoinEvent event) {

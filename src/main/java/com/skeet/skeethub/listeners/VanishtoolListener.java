@@ -12,18 +12,11 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import com.skeet.skeethub.Main;
 import com.skeet.skeethub.hub.Utils;
 
 import net.md_5.bungee.api.ChatColor;
 
 public class VanishtoolListener implements org.bukkit.event.Listener {
-
-	  private static Main plugin;
-	  
-	  public VanishtoolListener(Main pl) {
-		  this.plugin = pl;
-	  }
 
 	public static ArrayList<Player> hiding = new ArrayList<Player>();
 
@@ -90,7 +83,8 @@ public class VanishtoolListener implements org.bukkit.event.Listener {
 				lore1.add(ChatColor.DARK_GRAY + "(Toggles player visibility)");
 				hiddenMeta.setLore(lore1);
 				hidden.setItemMeta(hiddenMeta);
-				player.sendMessage(ChatColor.translateAlternateColorCodes('&', Utils.prefix + " &cPlayer visibility disabled"));
+				player.sendMessage(
+						ChatColor.translateAlternateColorCodes('&', Utils.prefix + " &cPlayer visibility disabled"));
 				hiding.remove(player);
 				player.getInventory().setItem(8, hidden);
 				for (Player p : Bukkit.getOnlinePlayers()) {
@@ -108,7 +102,8 @@ public class VanishtoolListener implements org.bukkit.event.Listener {
 			hidden.setItemMeta(hiddenMeta);
 			if ((player.getItemInHand().equals(hidden)) && ((action.equals(Action.RIGHT_CLICK_AIR))
 					|| ((action.equals(Action.RIGHT_CLICK_BLOCK)) && (player.getItemInHand().equals(hidden))))) {
-				player.sendMessage(ChatColor.translateAlternateColorCodes('&', Utils.prefix + " &aPlayer visibility enabled"));
+				player.sendMessage(
+						ChatColor.translateAlternateColorCodes('&', Utils.prefix + " &aPlayer visibility enabled"));
 				hiding.add(player);
 				player.getInventory().setItem(8, shown);
 				for (Player p : Bukkit.getOnlinePlayers()) {

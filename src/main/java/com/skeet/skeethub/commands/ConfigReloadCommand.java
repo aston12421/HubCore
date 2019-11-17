@@ -12,10 +12,9 @@ import com.skeet.skeethub.hub.HubScoreboard;
 import com.skeet.skeethub.hub.Utils;
 
 public class ConfigReloadCommand implements CommandExecutor {
-	private Main plugin;
 
 	public ConfigReloadCommand(Main plugin) {
-		this.plugin = plugin;
+		
 		plugin.getCommand("hub").setExecutor(this);
 	}
 
@@ -23,11 +22,11 @@ public class ConfigReloadCommand implements CommandExecutor {
 		Player player = (Player) sender;
 
 		if (!player.hasPermission("hub.admin")) {
-			player.sendMessage(Utils.prefix + Utils.nopermission);
+			player.sendMessage(Utils.prefix + Utils.noperm);
 			if (args[0] == "reload") {
-				plugin.reloadConfig();
+				Main.getInstance().reloadConfig();
 				HubScoreboard.createScoreboard(player);
-				player.sendMessage(plugin.getName() + " was reloaded");
+				player.sendMessage(Main.getInstance().getName() + " was reloaded");
 			}
 		}
 

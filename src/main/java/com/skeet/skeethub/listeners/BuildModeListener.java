@@ -12,8 +12,6 @@ import org.bukkit.event.player.PlayerPickupItemEvent;
 import com.skeet.skeethub.commands.BuildCommand;
 
 public class BuildModeListener implements Listener {
-	public BuildModeListener() {
-	}
 
 	@EventHandler
 	public void BlockPlace(BlockPlaceEvent event) {

@@ -11,8 +11,6 @@ import com.skeet.skeethub.Main;
 import net.milkbowl.vault.chat.Chat;
 
 public class PlayerChat implements Listener {
-	public PlayerChat() {
-	}
 
 	@EventHandler
 	public void chatFormat(AsyncPlayerChatEvent event) {

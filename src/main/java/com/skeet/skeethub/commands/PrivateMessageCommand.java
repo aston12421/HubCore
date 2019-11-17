@@ -15,17 +15,15 @@ import com.skeet.skeethub.Main;
 import com.skeet.skeethub.hub.Utils;
 
 public class PrivateMessageCommand implements CommandExecutor {
-	private Main plugin;
 
 	public PrivateMessageCommand(Main plugin) {
-		this.plugin = plugin;
 		plugin.getCommand("message").setExecutor(this);
 	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		Player player = (Player) sender;
 		if (!player.hasPermission("skeet.pm")) {
-			player.sendMessage(ChatColor.translateAlternateColorCodes('&', Utils.prefix + Utils.nopermission));
+			player.sendMessage(ChatColor.translateAlternateColorCodes('&', Utils.prefix + Utils.noperm));
 		} else if (args.length == 0) {
 			player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cUsage: /message <player> <message...>"));
 		} else if (args.length >= 1) {

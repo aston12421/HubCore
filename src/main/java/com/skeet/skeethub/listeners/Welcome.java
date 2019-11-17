@@ -14,26 +14,20 @@ import com.skeet.skeethub.Main;
 
 public class Welcome implements Listener {
 
-	private Main plugin;
-
-	public Welcome(Main pl) {
-		this.plugin = pl;
-	}
-
 	@EventHandler
 	public void onJoin(PlayerJoinEvent event) {
 		List<String> list = new ArrayList<String>();
-		list = (List<String>) plugin.getConfig().getList("welcome.message");
+		list = (List<String>) Main.getInstance().getConfig().getList("welcome.message");
 		Player player = event.getPlayer();
 		if (player.hasPlayedBefore()) {
 			event.setJoinMessage(null);
 			player.sendMessage(ChatColor.translateAlternateColorCodes('&',
 					"&7&m----------------------------------------------------"));
 			player.sendMessage(ChatColor.translateAlternateColorCodes('&',
-					"&7 Welcome to " + plugin.getConfig().getString("welcome.servername") + "&7, " + player.getName()));
-		    for (String string : list) {
-			player.sendMessage(ChatColor.translateAlternateColorCodes('&', "" + string));
-		    }
+					"&7 Welcome to " + Main.getInstance().getConfig().getString("welcome.servername") + "&7, " + player.getName()));
+			for (String string : list) {
+				player.sendMessage(ChatColor.translateAlternateColorCodes('&', "" + string));
+			}
 			player.sendMessage(ChatColor.translateAlternateColorCodes('&',
 					"&7&m----------------------------------------------------"));
 		}

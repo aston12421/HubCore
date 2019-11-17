@@ -10,11 +10,9 @@ import org.bukkit.entity.Player;
 import com.skeet.skeethub.Main;
 
 public class HelpCommand implements CommandExecutor {
-	private Main plugin;
 
 	public HelpCommand(Main plugin) {
-		this.plugin = plugin;
-		plugin.getCommand("links").setExecutor(this);
+		plugin.getCommand("help").setExecutor(this);
 	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {

@@ -13,10 +13,8 @@ import com.skeet.skeethub.Main;
 import com.skeet.skeethub.hub.Utils;
 
 public class BuildCommand implements CommandExecutor {
-	private Main plugin;
 
 	public BuildCommand(Main plugin) {
-		this.plugin = plugin;
 		plugin.getCommand("build").setExecutor(this);
 	}
 
@@ -27,7 +25,7 @@ public class BuildCommand implements CommandExecutor {
 		Player player = (Player) sender;
 
 		if (!player.hasPermission("hub.build")) {
-			player.sendMessage(Utils.prefix + Utils.nopermission);
+			player.sendMessage(Utils.prefix + Utils.noperm);
 		}
 		if (player.hasPermission("hub.build")) {
 			if (!buildmode.contains(player)) {

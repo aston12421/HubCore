@@ -18,11 +18,7 @@ import com.skeet.skeethub.Main;
 import com.skeet.skeethub.commands.BuildCommand;
 
 public class PlayerEvents implements Listener {
-	private Main plugin;
 
-	public PlayerEvents(Main pl) {
-		plugin = pl;
-	}
 
 	@EventHandler
 	public void onBlockBreak(BlockBreakEvent event) {

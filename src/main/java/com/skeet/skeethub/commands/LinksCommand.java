@@ -10,10 +10,8 @@ import org.bukkit.entity.Player;
 import com.skeet.skeethub.Main;
 
 public class LinksCommand implements CommandExecutor {
-	private Main plugin;
 
 	public LinksCommand(Main plugin) {
-		this.plugin = plugin;
 		plugin.getCommand("links").setExecutor(this);
 	}
 

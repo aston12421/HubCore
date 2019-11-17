@@ -20,12 +20,6 @@ import com.skeet.skeethub.Main;
 import net.milkbowl.vault.chat.Chat;
 
 public class HubScoreboard implements Listener {
-	
-	  private static Main plugin;
-	  
-	  public HubScoreboard(Main pl) {
-		  this.plugin = pl;
-	  }
 
 	public static ArrayList<Player> online = new ArrayList<Player>();
 
@@ -50,7 +44,7 @@ public class HubScoreboard implements Listener {
 		Chat chat = Main.getInstance().getChat();
 		Scoreboard board = Bukkit.getScoreboardManager().getNewScoreboard();
 		Objective o = board.registerNewObjective("Skeet Network", "dummy");
-		o.setDisplayName(ChatColor.translateAlternateColorCodes('&', Utils.scoreboardtitle));
+		o.setDisplayName(ChatColor.translateAlternateColorCodes('&', Utils.scoreboard_title));
 		o.setDisplaySlot(DisplaySlot.SIDEBAR);
 		Team test = board.registerNewTeam("test");
 		test.setPrefix(ChatColor.translateAlternateColorCodes('&', "&7&m--------"));
@@ -60,12 +54,12 @@ public class HubScoreboard implements Listener {
 		test1.setPrefix(ChatColor.translateAlternateColorCodes('&', "&7&m--------"));
 		test1.setSuffix("----------------");
 		Team serverip = board.registerNewTeam("serverip");
-		serverip.setPrefix(ChatColor.translateAlternateColorCodes('&', Utils.scoreboardip));
+		serverip.setPrefix(ChatColor.translateAlternateColorCodes('&', Utils.scoreboard_serverip));
 		Score spacer = o.getScore(ChatColor.translateAlternateColorCodes('&', "&r&7&m"));
 		Score spacer3 = o.getScore(ChatColor.translateAlternateColorCodes('&', "&7&m"));
-		Score rankt = o.getScore(ChatColor.translateAlternateColorCodes('&', Utils.scoreboardtheme + "Rank"));
+		Score rankt = o.getScore(ChatColor.translateAlternateColorCodes('&', Utils.scoreboard_theme + "Rank"));
 		Score rank = o.getScore(ChatColor.translateAlternateColorCodes('&', "&f" + chat.getPlayerSuffix(player)));
-		Score onlinet = o.getScore(ChatColor.translateAlternateColorCodes('&', Utils.scoreboardtheme + "Online"));
+		Score onlinet = o.getScore(ChatColor.translateAlternateColorCodes('&', Utils.scoreboard_theme + "Online"));
 		Score online = o.getScore(
 				ChatColor.translateAlternateColorCodes('&', "" + online_int + " / " + Bukkit.getMaxPlayers()));
 		Score spacer1 = o.getScore(ChatColor.translateAlternateColorCodes('&', " "));
