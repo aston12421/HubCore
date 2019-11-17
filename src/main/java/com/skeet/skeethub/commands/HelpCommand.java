@@ -19,11 +19,9 @@ public class HelpCommand implements CommandExecutor {
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		Player player = (Player) sender;
-
-		player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7&m----------------Help----------------"));
 		
+		player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7&m----------------Help----------------"));
 		player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7&m-------------------------------------"));
-
 		return false;
 	}
 }

@@ -31,9 +31,9 @@ public class Welcome implements Listener {
 					"&7&m----------------------------------------------------"));
 			player.sendMessage(ChatColor.translateAlternateColorCodes('&',
 					"&7 Welcome to " + plugin.getConfig().getString("welcome.servername") + "&7, " + player.getName()));
-		    for (String string : list) {
-			player.sendMessage(ChatColor.translateAlternateColorCodes('&', "" + string));
-		    }
+			for (String string : list) {
+				player.sendMessage(ChatColor.translateAlternateColorCodes('&', "" + string));
+			}
 			player.sendMessage(ChatColor.translateAlternateColorCodes('&',
 					"&7&m----------------------------------------------------"));
 		}
